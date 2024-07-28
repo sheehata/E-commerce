@@ -7,6 +7,7 @@ import android.widget.Button;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,27 +22,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    Button bt;
     private RecyclerView recyclerView;
     private ProductAdapter productAdapter;
+    private CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // bt=findViewById(R.id.button);
-        //bt.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-            //public void onClick(View view) {
-              // Intent intent=new Intent(MainActivity.this,description.class);
-            //}
-        //});
-
-
-
-
-
-
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         fetchProducts();
@@ -56,11 +44,10 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
                     List<Product> productList = response.body();
-                    Log.i("onResponse",response.body().toString());
                     productAdapter = new ProductAdapter(MainActivity.this, productList);
                     recyclerView.setAdapter(productAdapter);
                 }else {
-                    Log.i("onResponse",response.message());
+
 
                 }
             }
