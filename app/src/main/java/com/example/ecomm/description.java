@@ -34,6 +34,8 @@ public class description extends AppCompatActivity {
             t1.setText(title);
             t2.setText(price);
 
+
+
             Picasso.get().load(imageUrl).into(imageView);
         }
 
