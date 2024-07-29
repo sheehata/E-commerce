@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchProducts() {
-         FakeStoreApi api = RetrofitClient.getClient("https://fakestoreapi.com/ ").create(FakeStoreApi.class);
+         FakeStoreApi api = RetrofitClient.getClient("https://fakestoreapi.com/").create(FakeStoreApi.class);
         Call<List<Product>> call = api.getProducts();// khdna instance mn retrofit w creatna beh api service
 
         call.enqueue(new Callback<List<Product>>() {
