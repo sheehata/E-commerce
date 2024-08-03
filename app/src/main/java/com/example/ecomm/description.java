@@ -36,7 +36,7 @@ public class description extends AppCompatActivity {
 
 
 
-            Picasso.get().load(imageUrl).into(imageView);
+           //Picasso.get().load(imageUrl).into(imageView);
         }
 
     }

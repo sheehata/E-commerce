@@ -6,6 +6,8 @@ android {
     namespace 'com.example.ecomm'
     compileSdk 34
 
+    
+
     defaultConfig {
         applicationId "com.example.ecomm"
         minSdk 24
@@ -26,6 +28,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -43,5 +48,9 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
     //picaso library
-    implementation 'com.squareup.picasso:picasso:2.8';
+   // implementation 'com.squareup.picasso:picasso:2.8';
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
 }

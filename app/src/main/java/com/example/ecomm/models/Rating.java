@@ -8,4 +8,5 @@ public class Rating{
         this.rate = rate;
         this.count = count;
     }
+
 }
